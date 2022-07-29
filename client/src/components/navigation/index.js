@@ -12,16 +12,21 @@ import {
   ListItem,
   ListItemText,
   Hidden,
-  Button
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
+        <Link
+          to="settings"
+          style={{ textDecoration: "none", color: "grey" }}
+        >
           <ListItem>
             <ListItemButton>
               <ListItemIcon>
@@ -30,6 +35,7 @@ const Navigation = () => {
               <ListItemText primary="Settings" />
             </ListItemButton>
           </ListItem>
+        </Link>
       </List>
     </Box>
   );
@@ -51,14 +57,19 @@ const Navigation = () => {
             </IconButton>
           </Hidden>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Movies recommendation
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+              Movies recommendation
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 0, display: { xs: "none", lg: "flex" } }}>
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Link
+                to="settings"
+                style={{ textDecoration: "none", color: "white" }}
               >
                 Settings
-              </Button>
+              </Link>
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
