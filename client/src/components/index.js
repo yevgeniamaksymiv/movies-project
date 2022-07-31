@@ -1,3 +1,7 @@
-import Navigation from './navigation';
+import Navigation from './Navigation';
+import MovieCard from './MovieCard';
 
-export default Navigation;
+export { 
+  Navigation, MovieCard
+}
+  

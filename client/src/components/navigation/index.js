@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Drawer,
   Box,
@@ -13,20 +13,17 @@ import {
   ListItemText,
   Hidden,
   Button,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import SettingsIcon from "@mui/icons-material/Settings";
-import { Link } from "react-router-dom";
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
-        <Link
-          to="settings"
-          style={{ textDecoration: "none", color: "grey" }}
-        >
+        <Link to="settings" style={{ textDecoration: 'none', color: 'grey' }}>
           <ListItem>
             <ListItemButton>
               <ListItemIcon>
@@ -44,7 +41,7 @@ const Navigation = () => {
     <Box>
       <AppBar position="static">
         <Toolbar>
-          <Hidden only={["lg", "xl"]}>
+          <Hidden only={['lg', 'xl']}>
             <IconButton
               onClick={() => setDrawerOpen(true)}
               size="large"
@@ -57,15 +54,15 @@ const Navigation = () => {
             </IconButton>
           </Hidden>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
               Movies recommendation
             </Link>
           </Typography>
-          <Box sx={{ flexGrow: 0, display: { xs: "none", lg: "flex" } }}>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
+          <Box sx={{ flexGrow: 0, display: { xs: 'none', lg: 'flex' } }}>
+            <Button sx={{ my: 2, color: 'white', display: 'block' }}>
               <Link
                 to="settings"
-                style={{ textDecoration: "none", color: "white" }}
+                style={{ textDecoration: 'none', color: 'white' }}
               >
                 Settings
               </Link>
