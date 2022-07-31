@@ -1,20 +1,42 @@
-import { 
+import {
   IconButton,
   Card,
   CardMedia,
   CardContent,
-  Typography
+  Typography,
+  Menu,
+  MenuItem,
 } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+const ITEM_HEIGHT = 48;
+
 const MovieCard = () => {
   return (
-    <Card sx={{ maxWidth: 225, position: "relative" }}>
-      <IconButton aria-label="settings" sx={{ position: "absolute", top: "0", right: "0" }}>
+    <Card sx={{ maxWidth: 225, position: 'relative' }}>
+      <IconButton
+        aria-label="settings"
+        aria-haspopup="true"
+        sx={{ position: 'absolute', top: '0', right: '0' }}
+        onClick={() => {}}
+      >
         <MoreVertIcon />
       </IconButton>
+      <Menu
+        id="long-menu"
+        open={false}
+        onClose={() => {}}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5,
+            width: '20ch',
+          },
+        }}
+      >
+        <MenuItem onClick={() => {}}>Add</MenuItem>
+      </Menu>
       <CardMedia
-        sx={{ display: "block" }}
+        sx={{ display: 'block' }}
         component="img"
         height="295"
         image="https://www.themoviedb.org/t/p/w220_and_h330_face/neMZH82Stu91d3iqvLdNQfqPPyl.jpg"
