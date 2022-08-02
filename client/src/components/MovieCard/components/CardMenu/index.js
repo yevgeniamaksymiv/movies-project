@@ -2,7 +2,7 @@ import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
 
-const CardMenu = () => {
+const CardMenu = ({onCardSelect}) => {
   const ITEM_HEIGHT = 48;
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -18,7 +18,7 @@ const CardMenu = () => {
       <IconButton
         aria-label="settings"
         aria-haspopup="true"
-        sx={{ position: 'absolute', top: '0', right: '0' }}
+        sx={{ position: 'absolute', top: '0', right: '0', backgroundColor: 'rgb(255, 255, 255, .3)' }}
         onClick={handleClick}
       >
         <MoreVertIcon />
@@ -35,7 +35,7 @@ const CardMenu = () => {
           },
         }}
       >
-        <MenuItem>Add</MenuItem>
+        <MenuItem onClick={onCardSelect}>Select</MenuItem>
       </Menu>
     </>
   );
