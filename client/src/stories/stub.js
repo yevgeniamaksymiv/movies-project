@@ -3,7 +3,18 @@ export const movies = [
     "_id": "62e97d022705f665a01f406d",
     "image": "https://www.themoviedb.org/t/p/w220_and_h330_face/neMZH82Stu91d3iqvLdNQfqPPyl.jpg",
     "title": "Acruex",
-    "releaseDate": "2021-03-08T10:29:27 -02:00"
+    "releaseDate": "2021-03-08T10:29:27 -02:00",
+    "genre": [
+      {
+        "id": "8389333",
+        "name": "Drama"
+      },
+      {
+        "id": "8389111",
+        "name": "Horror"
+      }
+    ],
+    "runtime": "120"
   },
   {
     "_id": "62e97d02cb15550b3106a2db",
