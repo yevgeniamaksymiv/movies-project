@@ -1,15 +1,17 @@
-import { 
+import {
   Box,
   Card,
   CardContent,
   CardMedia,
-  Typography
+  Typography,
+  MenuItem,
 } from '@mui/material';
 import PropTypes from 'prop-types';
+import CardMenu from '../CardMenu';
 
 const MovieCardSelected = ({ movie, onCardDelete }) => {
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card sx={{ display: 'flex', position: 'relative' }}>
       <CardMedia
         component="img"
         sx={{ width: 100 }}
@@ -25,7 +27,7 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
             variant="subtitle1"
             color="text.secondary"
             component="div"
-            >
+          >
             {movie.releaseDate}
           </Typography>
           <Typography
@@ -44,7 +46,9 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
             Film duration: {movie.runtime}m.
           </Typography>
         </CardContent>
-        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}></Box>
+        <CardMenu>
+          <MenuItem onClick={onCardDelete}>Delete</MenuItem>
+        </CardMenu>
       </Box>
     </Card>
   );
@@ -57,10 +61,12 @@ MovieCardSelected.propTypes = {
     releaseDate: PropTypes.string,
   }).isRequired,
   onCardDelete: PropTypes.func,
-  genre: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
+  genre: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
   runtime: PropTypes.number.isRequired,
 };
 
