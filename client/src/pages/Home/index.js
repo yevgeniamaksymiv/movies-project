@@ -1,4 +1,10 @@
-import { Grid, Paper, Box } from '@mui/material';
+import { 
+  Grid,
+  Paper, 
+  Box, 
+  Pagination, 
+  Stack 
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useQuery } from '@apollo/client';
 
@@ -19,7 +25,7 @@ const Home = () => {
 
   if (error) {
     return 'Error';
-  };
+  }
 
   return (
     <Box sx={{ flexGrow: 1, marginTop: 2 }}>
@@ -34,12 +40,25 @@ const Home = () => {
               {data && (
                 <Grid container spacing={2}>
                   {data.movies.results.map((movie) => (
-                    <Grid key={movie.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
-                      <MovieCard movie={movie}/>
+                    <Grid
+                      key={movie.id}
+                      item
+                      xs={12}
+                      sm={6}
+                      md={4}
+                      lg={3}
+                      xl={2}
+                    >
+                      <MovieCard movie={movie} />
                     </Grid>
                   ))}
                 </Grid>
               )}
+            </Box>
+            <Box sx={{display: 'table', margin: '0 auto', padding: '16px 0'}}>
+              <Stack spacing={2}>
+                {data && <Pagination count={data.movies.totalPages} />}
+              </Stack>
             </Box>
           </Paper>
         </Grid>
@@ -49,6 +68,6 @@ const Home = () => {
       </Grid>
     </Box>
   );
-};;
+};
 
 export default Home;
