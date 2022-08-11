@@ -67,6 +67,7 @@ const Home = () => {
               <Stack spacing={2}>
                 {data && (
                   <Pagination
+                    color="primary"
                     count={data.movies.totalPages}
                     page={page}
                     onChange={paginationHanler}
