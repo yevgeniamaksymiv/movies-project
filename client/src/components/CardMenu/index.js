@@ -18,7 +18,12 @@ const CardMenu = ({children}) => {
       <IconButton
         aria-label="settings"
         aria-haspopup="true"
-        sx={{ position: 'absolute', top: '0', right: '0', backgroundColor: 'rgb(255, 255, 255, .3)' }}
+        sx={{
+          position: 'absolute',
+          top: '0',
+          right: '0',
+          backgroundColor: 'rgb(255, 255, 255, .3)',
+        }}
         onClick={handleClick}
       >
         <MoreVertIcon />
@@ -34,6 +39,7 @@ const CardMenu = ({children}) => {
             width: '20ch',
           },
         }}
+        onClick={handleClose}
       >
         {children}
       </Menu>
