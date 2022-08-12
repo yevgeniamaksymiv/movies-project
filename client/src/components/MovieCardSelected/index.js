@@ -11,7 +11,7 @@ import CardMenu from '../CardMenu';
 
 const MovieCardSelected = ({ movie, onCardDelete }) => {
   return (
-    <Card sx={{ display: 'flex', position: 'relative' }}>
+    <Card sx={{ display: 'flex', position: 'relative', mb: '10px' }}>
       <CardMedia
         component="img"
         sx={{ width: 100 }}
@@ -19,8 +19,8 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
         alt={movie.title}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
+        <CardContent sx={{ flex: '1 0 auto', p: '10px' }}>
+          <Typography component="div" variant="h6" lineHeight={1.2} >
             {movie.title}
           </Typography>
           <Typography
@@ -30,24 +30,9 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
           >
             {movie.releaseDate}
           </Typography>
-          <Typography
-            variant="subtitle1"
-            color="text.secondary"
-            component="div"
-            paddingTop={2}
-          >
-            {movie.genre[0].name}
-          </Typography>
-          <Typography
-            variant="subtitle3"
-            color="text.secondary"
-            component="div"
-          >
-            Film duration: {movie.runtime}m.
-          </Typography>
         </CardContent>
         <CardMenu>
-          <MenuItem onClick={onCardDelete}>Delete</MenuItem>
+          <MenuItem onClick={() => onCardDelete(movie)}>Delete</MenuItem>
         </CardMenu>
       </Box>
     </Card>
@@ -66,8 +51,8 @@ MovieCardSelected.propTypes = {
       id: PropTypes.number,
       name: PropTypes.string.isRequired,
     })
-  ).isRequired,
-  runtime: PropTypes.number.isRequired,
+  ),
+  runtime: PropTypes.number,
 };
 
 export default MovieCardSelected;
