@@ -9,8 +9,9 @@ import { styled } from '@mui/material/styles';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 
-import { MovieCard } from '../../components';
+import { MovieCard, MovieCardSelected } from '../../components';
 import { MOVIES_QUERY } from './queries';
+import { useMovies } from '../../hooks/useMovies';
 
 const SelectedMovies = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -26,6 +27,8 @@ const Home = () => {
   const { loading, error, data } = useQuery(MOVIES_QUERY, {
     variables: { page },
   });
+
+  const {selectedMovies, selectMovie, deleteMovie} = useMovies();
 
   const paginationHanler = (event, page) => {
     setPage(page);
@@ -57,7 +60,7 @@ const Home = () => {
                       lg={3}
                       xl={2}
                     >
-                      <MovieCard movie={movie} />
+                      <MovieCard movie={movie} onCardSelect={selectMovie} />
                     </Grid>
                   ))}
                 </Grid>
@@ -78,7 +81,15 @@ const Home = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          <SelectedMovies>Selected movies</SelectedMovies>
+          <SelectedMovies>
+            {selectedMovies.map((movie) => (
+              <MovieCardSelected
+                key={movie.id}
+                movie={movie}
+                onCardDelete={deleteMovie}
+              />
+            ))}
+          </SelectedMovies>
         </Grid>
       </Grid>
     </Box>
