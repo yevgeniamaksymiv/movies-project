@@ -17,7 +17,7 @@ const SelectedMovies = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  height: 'calc(100vh - 130px)',
+  height: 'calc(100vh - 30px)',
   position: 'sticky',
   top: theme.spacing(2),
 }));
@@ -39,7 +39,7 @@ const Home = () => {
   }
 
   return (
-    <Box sx={{ flexGrow: 1, marginTop: 2 }}>
+    <Box sx={{ flexGrow: 1, marginTop: 2, paddingBottom: 2 }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Paper>Filters section</Paper>
@@ -71,7 +71,7 @@ const Home = () => {
                 {data && (
                   <Pagination
                     color="primary"
-                    count={data.movies.totalPages}
+                    count={500}
                     page={page}
                     onChange={paginationHanler}
                   />
