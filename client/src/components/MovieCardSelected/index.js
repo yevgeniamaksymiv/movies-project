@@ -20,7 +20,7 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto', p: '10px' }}>
-          <Typography component="div" variant="h6" lineHeight={1.2} >
+          <Typography component="div" variant="h6" lineHeight={1.2}>
             {movie.title}
           </Typography>
           <Typography

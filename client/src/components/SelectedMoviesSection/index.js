@@ -1,10 +1,5 @@
 import { styled } from '@mui/material/styles';
-import {
-  Paper,
-  Box,
-  Typography,
-  TextField
-} from '@mui/material';
+import { Paper, Box, Typography, TextField } from '@mui/material';
 import { MovieCardSelected } from '../../components';
 import noMoviesImageSrc from '../../assets/cinema.png';
 
@@ -16,11 +11,11 @@ const SelectedMovies = styled(Paper)(({ theme }) => ({
   position: 'sticky',
   top: theme.spacing(2),
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column',
 }));
 
 const MoviesList = styled(Box)(({ theme }) => ({
-  overflow: 'auto'
+  overflow: 'auto',
 }));
 
 const NoMovies = styled(Box)(({ theme }) => ({
@@ -28,17 +23,17 @@ const NoMovies = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flexDirection: 'column'
-}))
+  flexDirection: 'column',
+}));
 
-const SelectedMoviesSection = ({selectedMovies, deleteMovie}) => {
+const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {
   if (!selectedMovies.length) {
     return (
       <SelectedMovies>
         <NoMovies>
           <Box
             component="img"
-            sx={{ width: '70%', borderRadius: '50%' }}
+            sx={{ width: '60%', borderRadius: '50%' }}
             alt="Cinema image"
             src={noMoviesImageSrc}
           />
@@ -60,17 +55,17 @@ const SelectedMoviesSection = ({selectedMovies, deleteMovie}) => {
             onCardDelete={deleteMovie}
           />
         ))}
-          </MoviesList>
-        <Box pt={2}>
-          <TextField
-            fullWidth
-            label="Put the list name"
-            id="fullWidth"
-            size="small"
-          />
-        </Box>
+      </MoviesList>
+      <Box pt={2}>
+        <TextField
+          fullWidth
+          label="Put the list name"
+          id="fullWidth"
+          size="small"
+        />
+      </Box>
     </SelectedMovies>
   );
 };
 
-export default SelectedMoviesSection 
+export default SelectedMoviesSection;
