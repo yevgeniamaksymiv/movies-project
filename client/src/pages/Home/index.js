@@ -3,26 +3,14 @@ import {
   Paper,
   Box, 
   Pagination, 
-  Stack,
-  TextField 
+  Stack
 } from '@mui/material';
-import { styled } from '@mui/material/styles';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 
-import { MovieCard, MovieCardSelected } from '../../components';
+import { MovieCard, SelectedMoviesSection } from '../../components';
 import { MOVIES_QUERY } from './queries';
 import { useMovies } from '../../hooks/useMovies';
-
-const SelectedMovies = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  height: 'calc(100vh - 30px)',
-  position: 'sticky',
-  top: theme.spacing(2),
-  overflow: 'auto'
-}));
 
 const Home = () => {
   const [page, setPage] = useState(1);
@@ -83,18 +71,7 @@ const Home = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          <SelectedMovies>
-            {selectedMovies.map((movie) => (
-              <MovieCardSelected
-                key={movie.id}
-                movie={movie}
-                onCardDelete={deleteMovie}
-              />
-            ))}
-          <Box sx={{ width: '300px', maxWidth: '100%', position: 'absolute', bottom: '10px' }}>
-            <TextField fullWidth label="Put the list name" id="fullWidth" />
-          </Box>
-            </SelectedMovies>
+          <SelectedMoviesSection selectedMovies={selectedMovies} deleteMovie={deleteMovie}/>
         </Grid>
       </Grid>
     </Box>
