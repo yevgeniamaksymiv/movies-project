@@ -3,7 +3,8 @@ import {
   Paper,
   Box, 
   Pagination, 
-  Stack 
+  Stack,
+  TextField 
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useQuery } from '@apollo/client';
@@ -20,6 +21,7 @@ const SelectedMovies = styled(Paper)(({ theme }) => ({
   height: 'calc(100vh - 30px)',
   position: 'sticky',
   top: theme.spacing(2),
+  overflow: 'auto'
 }));
 
 const Home = () => {
@@ -89,7 +91,10 @@ const Home = () => {
                 onCardDelete={deleteMovie}
               />
             ))}
-          </SelectedMovies>
+          <Box sx={{ width: '300px', maxWidth: '100%', position: 'absolute', bottom: '10px' }}>
+            <TextField fullWidth label="Put the list name" id="fullWidth" />
+          </Box>
+            </SelectedMovies>
         </Grid>
       </Grid>
     </Box>
