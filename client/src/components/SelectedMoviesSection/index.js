@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
-import { Paper, Box, Typography, TextField } from '@mui/material';
-import { MovieCardSelected } from '../../components';
+import { Paper, Box, Typography } from '@mui/material';
+import { MovieCardSelected, SelectedMoviesForm } from '../../components';
 import noMoviesImageSrc from '../../assets/cinema.png';
 
 const SelectedMovies = styled(Paper)(({ theme }) => ({
@@ -56,14 +56,7 @@ const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {
           />
         ))}
       </MoviesList>
-      <Box pt={2}>
-        <TextField
-          fullWidth
-          label="Put the list name"
-          id="fullWidth"
-          size="small"
-        />
-      </Box>
+      <SelectedMoviesForm />
     </SelectedMovies>
   );
 };
