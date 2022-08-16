@@ -2,7 +2,7 @@ import { Paper, TextField, IconButton } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import { Form, Field } from 'react-final-form';
 
-export const SelectedMoviesForm = ({ onSubmit }) => {
+const SelectedMoviesForm = ({ onSubmit }) => {
   return (
     <Form
       onSubmit={onSubmit}
@@ -48,3 +48,5 @@ export const SelectedMoviesForm = ({ onSubmit }) => {
     />
   );
 };
+
+export default SelectedMoviesForm;
