@@ -1,14 +1,19 @@
-import { 
-  Box, 
-  Typography, 
-  Modal, Paper, 
-  InputBase, 
+import {
+  Box,
+  Typography,
+  Modal,
+  Paper,
+  InputBase,
   Divider,
-  IconButton 
+  IconButton,
+  Alert,
 } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CloseIcon from '@mui/icons-material/Close';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const style = {
   position: 'absolute',
@@ -17,13 +22,14 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: '1px solid #fff',
   boxShadow: 24,
   p: 4,
 };
 
 const ConfirmModal = ({ open, url, title, onClose }) => {
- 
+  const [openAlert, setOpenAlert] = useState(false);
+
   return (
     <Modal
       open={open}
@@ -42,7 +48,7 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             mt: '24px',
             display: 'flex',
             alignItems: 'center',
-            width: 400,
+            width: 334,
           }}
         >
           <InputBase
@@ -55,10 +61,35 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             <VisibilityIcon />
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-          <IconButton color="primary" sx={{ p: '10px' }} aria-label="copy to clipboard">
-            <ContentCopyIcon />
-          </IconButton>
+          <CopyToClipboard text={url} onCopy={() => setOpenAlert(true)}>
+            <IconButton
+              color="primary"
+              sx={{ p: '10px' }}
+              aria-label="copy to clipboard"
+            >
+              <ContentCopyIcon />
+            </IconButton>
+          </CopyToClipboard>
         </Paper>
+        {openAlert ? (
+          <Alert
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setOpenAlert(false);
+                }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+            sx={{ mt: 2 }}
+          >
+            Copied!
+          </Alert>
+        ) : null}
       </Box>
     </Modal>
   );
@@ -68,7 +99,7 @@ ConfirmModal.propTypes = {
   open: PropTypes.bool,
   url: PropTypes.string,
   title: PropTypes.string,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
 };
 
 export default ConfirmModal;
