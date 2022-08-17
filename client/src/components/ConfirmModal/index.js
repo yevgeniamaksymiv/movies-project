@@ -15,6 +15,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
+import SocialShare from '../SocialShare';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -47,8 +49,7 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             p: '2px 4px',
             mt: '24px',
             display: 'flex',
-            alignItems: 'center',
-            width: 334,
+            alignItems: 'center'
           }}
         >
           <InputBase
@@ -57,7 +58,12 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             inputProps={{ 'aria-label': 'list url' }}
             value={url}
           />
-          <IconButton type="button" sx={{ p: '10px' }} aria-label="preview">
+          <IconButton
+            href={url}
+            target="_blank"
+            sx={{ p: '10px' }}
+            aria-label="preview"
+          >
             <VisibilityIcon />
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
@@ -71,6 +77,10 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             </IconButton>
           </CopyToClipboard>
         </Paper>
+        <Typography id="modal-modal-title" variant="h6" component="h3" mt={3}>
+          Share with friends
+        </Typography>
+        <SocialShare url={url} title={title} />
         {openAlert ? (
           <Alert
             action={

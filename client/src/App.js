@@ -25,7 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="settings" element={<Settings />} />
-              <Route path="settings" element={<Recommend />} />
+              <Route path="recommend" element={<Recommend />} />
             </Routes>
           </Container>
         </Box>

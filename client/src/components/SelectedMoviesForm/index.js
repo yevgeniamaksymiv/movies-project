@@ -11,9 +11,6 @@ const SelectedMoviesForm = ({ onSubmit }) => {
         if (!values.listName) {
           errors.listName = 'Required';
         }
-        if (/\s/.test(values.listName)) {
-          errors.listName = 'No whitespace';
-        }
         return errors;
       }}
       render={({ handleSubmit }) => (
