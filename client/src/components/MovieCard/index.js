@@ -9,21 +9,23 @@ import {
 import PropTypes from 'prop-types';
 import CardMenu from '../CardMenu';
 
-const MovieCard = ({ movie, onCardSelect }) => {
+const MovieCard = ({ movie, onCardSelect, isPreviewMode }) => {
   return (
     <Card sx={{ maxWidth: '200px', height: '420px', position: 'relative' }}>
-      <CardMenu>
-        <MenuItem onClick={() => onCardSelect(movie)}>
-          Select
-        </MenuItem>
-      </CardMenu>
+      {!isPreviewMode && (
+        <CardMenu>
+          <MenuItem onClick={() => onCardSelect(movie)}>Select</MenuItem>
+        </CardMenu>
+      )}
       <CardMedia
         sx={{ display: 'block', height: '300px' }}
         component="img"
         image={movie.image}
         alt={movie.title}
       />
-      <CardContent sx={{ '&:last-child': { paddingBottom: '10px' }, padding: '10px'}}>
+      <CardContent
+        sx={{ '&:last-child': { paddingBottom: '10px' }, padding: '10px' }}
+      >
         <Typography variant="body1" sx={{ fontWeight: 700 }}>
           {movie.title}
         </Typography>
@@ -42,6 +44,7 @@ MovieCard.propTypes = {
     releaseDate: PropTypes.string,
   }).isRequired,
   onCardSelect: PropTypes.func,
+  isPreviewMode: PropTypes.bool
 };
 
 export default MovieCard;
