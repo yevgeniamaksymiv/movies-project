@@ -22,6 +22,7 @@ const Home = () => {
 
   const paginationHanler = (event, page) => {
     setPage(page);
+    window.scrollTo(0, 0);
   };
 
   if (error) {
@@ -31,9 +32,6 @@ const Home = () => {
   return (
     <Box sx={{ flexGrow: 1, marginTop: 2, paddingBottom: 2 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Paper>Filters section</Paper>
-        </Grid>
         <Grid item xs={12} md={8}>
           <Paper>
             <Box sx={{ flexGrow: 1, padding: 1 }}>
