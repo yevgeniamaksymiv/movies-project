@@ -31,6 +31,12 @@ const style = {
 
 const ConfirmModal = ({ open, url, title, onClose }) => {
   const [openAlert, setOpenAlert] = useState(false);
+  const handleAlert = () => {
+    setOpenAlert(true);
+    setTimeout(() => {
+      setOpenAlert(false);
+    }, 2000);
+  };
 
   return (
     <Modal
@@ -49,7 +55,7 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             p: '2px 4px',
             mt: '24px',
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
           }}
         >
           <InputBase
@@ -67,7 +73,10 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             <VisibilityIcon />
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-          <CopyToClipboard text={url} onCopy={() => setOpenAlert(true)}>
+          <CopyToClipboard
+            text={url}
+            onCopy={handleAlert}
+          >
             <IconButton
               color="primary"
               sx={{ p: '10px' }}
