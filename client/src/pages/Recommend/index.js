@@ -6,7 +6,7 @@ import { MOVIES_BY_IDS_QUERY } from './queries';
 import { MovieCard } from '../../components';
 
 const Recommend = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const { loading, error, data } = useQuery(MOVIES_BY_IDS_QUERY, {
     variables: { 
