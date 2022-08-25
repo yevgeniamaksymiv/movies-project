@@ -16,6 +16,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 import SocialShare from '../SocialShare';
+import { CLOSE_ALERT_DELAY } from '../../const';
 
 const style = {
   position: 'absolute',
@@ -35,7 +36,7 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
     setOpenAlert(true);
     setTimeout(() => {
       setOpenAlert(false);
-    }, 2000);
+    }, CLOSE_ALERT_DELAY);
   };
 
   return (
