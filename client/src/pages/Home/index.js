@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { MovieCard, SelectedMoviesSection } from '../../components';
 import { MOVIES_QUERY } from './queries';
 import { useMovies } from '../../hooks/useMovies';
+import { COUNT_OF_PAGES } from '../../const';
 
 const Home = () => {
   const [page, setPage] = useState(1);
@@ -59,7 +60,7 @@ const Home = () => {
                 {data && (
                   <Pagination
                     color="primary"
-                    count={500}
+                    count={COUNT_OF_PAGES}
                     page={page}
                     onChange={paginationHanler}
                   />
