@@ -26,8 +26,9 @@ const style = {
   width: 400,
   bgcolor: 'background.paper',
   border: '1px solid #fff',
+  borderRadius: 1,
   boxShadow: 24,
-  p: 4,
+  p: 4
 };
 
 const ConfirmModal = ({ open, url, title, onClose }) => {
@@ -74,10 +75,7 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             <VisibilityIcon />
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-          <CopyToClipboard
-            text={url}
-            onCopy={handleAlert}
-          >
+          <CopyToClipboard text={url} onCopy={handleAlert}>
             <IconButton
               color="primary"
               sx={{ p: '10px' }}
