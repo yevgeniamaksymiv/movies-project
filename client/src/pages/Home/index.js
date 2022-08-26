@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Paper, Box, Pagination, Stack } from '@mui/material';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';

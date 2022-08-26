@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Typography, Grid } from '@mui/material';
 import { useQuery } from '@apollo/client';

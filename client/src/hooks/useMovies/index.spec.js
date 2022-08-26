@@ -1,4 +1,3 @@
-import React from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useMovies } from '.';
 import { MAX_SELECTED_MOVIES } from '../../const';

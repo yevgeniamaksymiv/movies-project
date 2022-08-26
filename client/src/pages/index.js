@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Settings from './Settings';
 import Home from './Home';
 import Recommend from './Recommend';

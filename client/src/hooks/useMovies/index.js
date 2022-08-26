@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useCallback } from 'react';
 import { MAX_SELECTED_MOVIES } from '../../const';
 

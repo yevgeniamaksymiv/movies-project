@@ -1,4 +1,3 @@
-import React from 'react';
 import { useReducer, createContext } from 'react';
 import defaultContext from './defaultContext';
 
