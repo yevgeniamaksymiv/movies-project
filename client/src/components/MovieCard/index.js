@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Card,
   MenuItem,
@@ -44,7 +45,7 @@ MovieCard.propTypes = {
     releaseDate: PropTypes.string,
   }).isRequired,
   onCardSelect: PropTypes.func,
-  isPreviewMode: PropTypes.bool
+  isPreviewMode: PropTypes.bool,
 };
 
 export default MovieCard;

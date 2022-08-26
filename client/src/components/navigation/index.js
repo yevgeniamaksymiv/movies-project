@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useContext, useCallback } from 'react';
 import {
   Drawer,
@@ -76,7 +77,7 @@ const Navigation = () => {
               disabled={state.locale === LOCALES.ENGLISH}
               sx={{ color: 'white', fontSize: '12px' }}
               onClick={() => setLanguage(LOCALES.ENGLISH)}
-              >
+            >
               English
             </Button>
             <Button

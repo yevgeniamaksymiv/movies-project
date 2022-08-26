@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Typography,
@@ -28,7 +29,7 @@ const style = {
   border: '1px solid #fff',
   borderRadius: 1,
   boxShadow: 24,
-  p: 4
+  p: 4,
 };
 
 const ConfirmModal = ({ open, url, title, onClose }) => {

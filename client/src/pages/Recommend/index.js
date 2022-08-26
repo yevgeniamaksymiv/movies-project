@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Typography, Grid } from '@mui/material';
 import { useQuery } from '@apollo/client';
@@ -9,18 +10,21 @@ const Recommend = () => {
   const [searchParams] = useSearchParams();
 
   const { loading, error, data } = useQuery(MOVIES_BY_IDS_QUERY, {
-    variables: { 
-      ids: searchParams.get('ids').split(',').map((id) => +id)
-    }
+    variables: {
+      ids: searchParams
+        .get('ids')
+        .split(',')
+        .map((id) => +id),
+    },
   });
 
   if (loading) {
     return <div>Loading...</div>;
-  };
+  }
 
   if (error) {
     return <div>Error. Try again!</div>;
-  };
+  }
 
   return (
     <>
@@ -38,6 +42,6 @@ const Recommend = () => {
       )}
     </>
   );
-};;
+};
 
 export default Recommend;

@@ -1,10 +1,5 @@
-import { 
-  Grid, 
-  Paper,
-  Box, 
-  Pagination, 
-  Stack
-} from '@mui/material';
+import React from 'react';
+import { Grid, Paper, Box, Pagination, Stack } from '@mui/material';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 
@@ -19,7 +14,7 @@ const Home = () => {
     variables: { page },
   });
 
-  const {selectedMovies, selectMovie, deleteMovie} = useMovies();
+  const { selectedMovies, selectMovie, deleteMovie } = useMovies();
 
   const paginationHanler = (event, page) => {
     setPage(page);
@@ -70,7 +65,10 @@ const Home = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          <SelectedMoviesSection selectedMovies={selectedMovies} deleteMovie={deleteMovie}/>
+          <SelectedMoviesSection
+            selectedMovies={selectedMovies}
+            deleteMovie={deleteMovie}
+          />
         </Grid>
       </Grid>
     </Box>

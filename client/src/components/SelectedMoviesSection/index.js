@@ -1,6 +1,11 @@
+import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Paper, Box, Typography } from '@mui/material';
-import { MovieCardSelected, SelectedMoviesForm, ConfirmModal } from '../../components';
+import {
+  MovieCardSelected,
+  SelectedMoviesForm,
+  ConfirmModal,
+} from '../../components';
 import noMoviesImageSrc from '../../assets/cinema.png';
 import { useState } from 'react';
 
@@ -32,8 +37,10 @@ const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {
   const [link, setLink] = useState('');
 
   const onSubmit = ({ listName }) => {
-    const ids = selectedMovies.map(({id}) => id);
-    const link = `${window.location.host}/recommend?title=${listName}&ids=${ids.join()}`;
+    const ids = selectedMovies.map(({ id }) => id);
+    const link = `${
+      window.location.host
+    }/recommend?title=${listName}&ids=${ids.join()}`;
 
     setListName(listName);
     setLink(link);
@@ -73,11 +80,11 @@ const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {
         ))}
       </MoviesList>
       <SelectedMoviesForm onSubmit={onSubmit} />
-      <ConfirmModal 
+      <ConfirmModal
         url={link}
         title={listName}
         open={!!link}
-        onClose={onCloseConfirmModal}  
+        onClose={onCloseConfirmModal}
       />
     </SelectedMovies>
   );

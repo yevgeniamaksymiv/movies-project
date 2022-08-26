@@ -7,14 +7,13 @@ import SelectedMoviesForm from './SelectedMoviesForm';
 import ConfirmModal from './ConfirmModal';
 import SocialShare from './SocialShare';
 
-export { 
+export {
   Navigation,
-  MovieCard, 
-  MovieCardSelected, 
-  CardMenu, 
-  SelectedMoviesSection, 
+  MovieCard,
+  MovieCardSelected,
+  CardMenu,
+  SelectedMoviesSection,
   SelectedMoviesForm,
   ConfirmModal,
-  SocialShare
-}
-  
+  SocialShare,
+};
