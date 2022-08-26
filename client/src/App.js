@@ -1,15 +1,16 @@
+import React from 'react';
 import { useContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, Container, Box } from '@mui/material';
 import Navigation from './components/Navigation';
 import { Settings, Home, Recommend } from './pages';
-import { 
-  ApolloClient, 
-  InMemoryCache, 
-  ApolloProvider, 
-  HttpLink, 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
   ApolloLink,
-  from
+  from,
 } from '@apollo/client';
 
 import { AppContext } from './context/appContext';
@@ -30,7 +31,7 @@ function App() {
     });
     return forward(operation);
   });
-  
+
   const client = new ApolloClient({
     link: from([localeMiddleware, httpLink]),
     cache: new InMemoryCache(),

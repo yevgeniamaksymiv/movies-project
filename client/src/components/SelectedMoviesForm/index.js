@@ -1,3 +1,4 @@
+import React from 'react';
 import { Paper, TextField, IconButton } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import { Form, Field } from 'react-final-form';
@@ -31,8 +32,8 @@ const SelectedMoviesForm = ({ onSubmit }) => {
                     label="Put the list name"
                     size="small"
                     {...input}
-                    />
-                    {meta.error && meta.touched && <span>{meta.error}</span>}
+                  />
+                  {meta.error && meta.touched && <span>{meta.error}</span>}
                 </>
               )}
             </Field>
