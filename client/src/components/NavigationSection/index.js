@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/appContext';
 import { LOCALES } from '../../const';
 
-const Navigation = () => {
+const NavigationSection = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const { state, dispatch } = useContext(AppContext);
 
@@ -110,4 +110,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default NavigationSection;

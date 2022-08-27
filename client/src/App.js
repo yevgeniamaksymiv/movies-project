@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CssBaseline, Container, Box } from '@mui/material';
-import Navigation from './components/Navigation';
+import NavigationSection from './components/NavigationSection';
 import { Settings, Home, Recommend } from './pages';
 import {
   ApolloClient,
@@ -41,7 +41,7 @@ function App() {
     <ApolloProvider client={client}>
       <BrowserRouter>
         <CssBaseline />
-        <Navigation />
+        <NavigationSection />
         <Box
           sx={{
             backgroundColor: (theme) => theme.palette.grey[100],

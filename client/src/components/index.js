@@ -1,4 +1,4 @@
-import Navigation from './Navigation';
+import NavigationSection from './NavigationSection';
 import MovieCard from './MovieCard';
 import MovieCardSelected from './MovieCardSelected';
 import CardMenu from './CardMenu';
@@ -8,7 +8,7 @@ import ConfirmModal from './ConfirmModal';
 import SocialShare from './SocialShare';
 
 export {
-  Navigation,
+  NavigationSection,
   MovieCard,
   MovieCardSelected,
   CardMenu,
