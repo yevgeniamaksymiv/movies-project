@@ -1,5 +1,7 @@
 import { LOCALES } from "../../const";
 
-export default {
+const locale = {
   locale: LOCALES.ENGLISH
-};
+}; 
+
+export default locale;

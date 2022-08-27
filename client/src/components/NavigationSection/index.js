@@ -30,7 +30,7 @@ const NavigationSection = () => {
       type: 'setLocale',
       locale,
     });
-  }, []);
+  }, [dispatch]);
 
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation">
@@ -71,7 +71,6 @@ const NavigationSection = () => {
             </Link>
           </Typography>
           <Box pr={2}>
-            {state.locale}
             <Button
               disabled={state.locale === LOCALES.ENGLISH}
               sx={{ color: 'white', fontSize: '12px' }}
