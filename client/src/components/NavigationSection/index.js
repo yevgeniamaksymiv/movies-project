@@ -13,7 +13,10 @@ import {
   ListItemText,
   Hidden,
   Button,
+  Divider
 } from '@mui/material';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import LanguageIcon from '@mui/icons-material/Language';
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Link } from 'react-router-dom';
@@ -35,6 +38,21 @@ const NavigationSection = () => {
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
+        <ListItem>
+          <ListItemButton
+            mr={0}
+            onClick={() => {
+              setDrawerOpen(false);
+            }}
+          >
+            <ListItemIcon>
+              <ChevronLeftIcon />
+            </ListItemIcon>
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
         <Link to="settings" style={{ textDecoration: 'none', color: 'grey' }}>
           <ListItem>
             <ListItemButton>
@@ -45,6 +63,41 @@ const NavigationSection = () => {
             </ListItemButton>
           </ListItem>
         </Link>
+      </List>
+      <Divider />
+      <List>
+        <ListItem>
+          <ListItemButton
+            disabled={state.locale === LOCALES.ENGLISH}
+            sx={{ color: 'grey' }}
+            onClick={() => setLanguage(LOCALES.ENGLISH)}
+          >
+            <ListItemIcon>
+              <LanguageIcon
+                visibility={
+                  state.locale === LOCALES.ENGLISH ? 'hidden' : 'visible'
+                }
+              />
+            </ListItemIcon>
+            <ListItemText primary="English" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton
+            disabled={state.locale === LOCALES.UKRAINIAN}
+            sx={{ color: 'grey' }}
+            onClick={() => setLanguage(LOCALES.UKRAINIAN)}
+          >
+            <ListItemIcon>
+              <LanguageIcon
+                visibility={
+                  state.locale === LOCALES.UKRAINIAN ? 'hidden' : 'visible'
+                }
+              />
+            </ListItemIcon>
+            <ListItemText primary="Українська" />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -70,17 +123,17 @@ const NavigationSection = () => {
               Movies recommendation
             </Link>
           </Typography>
-          <Box pr={2}>
+          <Box pr={2} sx={{ flexGrow: 0, display: { xs: 'none', lg: 'flex' } }}>
             <Button
               disabled={state.locale === LOCALES.ENGLISH}
-              sx={{ color: 'white', fontSize: '12px' }}
+              sx={{ color: 'white', fontSize: '12px', display: 'block' }}
               onClick={() => setLanguage(LOCALES.ENGLISH)}
             >
               English
             </Button>
             <Button
               disabled={state.locale === LOCALES.UKRAINIAN}
-              sx={{ color: 'white', fontSize: '12px' }}
+              sx={{ color: 'white', fontSize: '12px', display: 'block' }}
               onClick={() => setLanguage(LOCALES.UKRAINIAN)}
             >
               Українська
