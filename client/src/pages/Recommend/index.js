@@ -26,20 +26,20 @@ const Recommend = () => {
   }
 
   return (
-    <Box height="calc(100% - 64px)" pb={3}>
-      <Typography component="h1" variant="h3" pt={2} pb={2}>
-        {data && searchParams.get('title')}
-      </Typography>
-      {data.moviesByIds && (
-        <Grid container spacing={2}>
-          {data.moviesByIds.map((movie) => (
-            <Grid key={movie.id} item xs={12} sm={4} md={3} lg={2}>
-              <MovieCard movie={movie} isPreviewMode />
-            </Grid>
-          ))}
-        </Grid>
-      )}
-    </Box>
+      <Box pb={3}>
+        <Typography component="h1" variant="h3" py={3}>
+          {data && searchParams.get('title')}
+        </Typography>
+        {data.moviesByIds && (
+          <Grid container spacing={2}>
+            {data.moviesByIds.map((movie) => (
+              <Grid key={movie.id} item xs={12} sm={4} md={3} lg={2}>
+                <MovieCard movie={movie} isPreviewMode />
+              </Grid>
+            ))}
+          </Grid>
+        )}
+      </Box>
   );
 };
 
