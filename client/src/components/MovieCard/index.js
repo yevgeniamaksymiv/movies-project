@@ -11,7 +11,7 @@ import CardMenu from '../CardMenu';
 
 const MovieCard = ({ movie, onCardSelect, isPreviewMode }) => {
   return (
-    <Card sx={{ maxWidth: '200px', height: '420px', position: 'relative' }}>
+    <Card sx={{ maxWidth: '200px', height: '420px', position: 'relative', mx: 'auto' }}>
       {!isPreviewMode && (
         <CardMenu>
           <MenuItem onClick={() => onCardSelect(movie)}>Select</MenuItem>
