@@ -7,6 +7,7 @@ import {
 } from '../../components';
 import noMoviesImageSrc from '../../assets/cinema.png';
 import { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 const SelectedMovies = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -60,7 +61,7 @@ const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {
             src={noMoviesImageSrc}
           />
           <Typography variant="h5" mt={2} color="primary">
-            No selected movies
+            <FormattedMessage id="no_selected_movies" />
           </Typography>
         </NoMovies>
       </SelectedMovies>

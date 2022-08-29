@@ -7,6 +7,7 @@ import {
 } from '@mui/material';
 
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import CardMenu from '../CardMenu';
 
 const MovieCard = ({ movie, onCardSelect, isPreviewMode }) => {
@@ -14,7 +15,9 @@ const MovieCard = ({ movie, onCardSelect, isPreviewMode }) => {
     <Card sx={{ maxWidth: '200px', height: '420px', position: 'relative', mx: 'auto' }}>
       {!isPreviewMode && (
         <CardMenu>
-          <MenuItem onClick={() => onCardSelect(movie)}>Select</MenuItem>
+          <MenuItem onClick={() => onCardSelect(movie)}>
+            <FormattedMessage id="select" />
+          </MenuItem>
         </CardMenu>
       )}
       <CardMedia

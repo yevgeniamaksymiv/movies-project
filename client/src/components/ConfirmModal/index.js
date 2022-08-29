@@ -17,6 +17,7 @@ import { useState } from 'react';
 
 import SocialShare from '../SocialShare';
 import { CLOSE_ALERT_DELAY } from '../../const';
+import { FormattedMessage } from 'react-intl';
 
 const style = {
   position: 'absolute',
@@ -89,7 +90,7 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
           </CopyToClipboard>
         </Paper>
         <Typography id="modal-modal-title" variant="h6" component="h3" mt={3}>
-          Share with friends
+          <FormattedMessage id="share_with_friends" />
         </Typography>
         <SocialShare url={url} title={title} />
         {openAlert ? (
@@ -108,7 +109,7 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             }
             sx={{ mt: 2 }}
           >
-            Copied!
+            <FormattedMessage id="copied" />
           </Alert>
         ) : null}
       </Box>

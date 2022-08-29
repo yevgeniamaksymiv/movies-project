@@ -20,6 +20,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import { AppContext } from '../../context/appContext';
 import { LOCALES } from '../../const';
@@ -59,7 +60,9 @@ const NavigationSection = () => {
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>
-              <ListItemText primary="Settings" />
+              <FormattedMessage id="settings">
+                {(primary) => <ListItemText primary={primary} />}
+              </FormattedMessage>
             </ListItemButton>
           </ListItem>
         </Link>
@@ -120,7 +123,7 @@ const NavigationSection = () => {
           </Hidden>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              Movies recommendation
+              <FormattedMessage id="home" />
             </Link>
           </Typography>
           <Box pr={2} sx={{ flexGrow: 0, display: { xs: 'none', lg: 'flex' } }}>
@@ -145,7 +148,7 @@ const NavigationSection = () => {
                 to="settings"
                 style={{ textDecoration: 'none', color: 'white' }}
               >
-                Settings
+                <FormattedMessage id="settings" />
               </Link>
             </Button>
           </Box>

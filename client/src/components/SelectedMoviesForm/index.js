@@ -1,6 +1,7 @@
 import { Paper, TextField, IconButton } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import { Form, Field } from 'react-final-form';
+import { FormattedMessage } from 'react-intl';
 
 const SelectedMoviesForm = ({ onSubmit }) => {
   return (
@@ -26,12 +27,17 @@ const SelectedMoviesForm = ({ onSubmit }) => {
             <Field name="listName">
               {({ input, meta }) => (
                 <>
-                  <TextField
-                    sx={{ width: '65%' }}
-                    label="Put the list name"
-                    size="small"
-                    {...input}
-                  />
+                  <FormattedMessage id="put_the_list_name">
+                    {
+                      label =>
+                        <TextField
+                          sx={{ width: '65%' }}
+                          label={label}
+                          size="small"
+                          {...input}
+                        />
+                    }
+                  </FormattedMessage>
                   {meta.error && meta.touched && <span>{meta.error}</span>}
                 </>
               )}

@@ -3,8 +3,8 @@ const SOCIAL_ICON_SIZE = 32;
 const CLOSE_ALERT_DELAY = 2000;
 const COUNT_OF_PAGES = 500;
 const LOCALES = {
-  ENGLISH: 'en-us',
-  UKRAINIAN: 'uk'
+  ENGLISH: 'en-US',
+  UKRAINIAN: 'uk-UA'
 }
 
 export { 

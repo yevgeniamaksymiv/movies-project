@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { CssBaseline, Container, Box } from '@mui/material';
 import NavigationSection from './components/NavigationSection';
 import { Settings, Home, Recommend } from './pages';
@@ -13,6 +13,7 @@ import {
 } from '@apollo/client';
 
 import { AppContext } from './context/appContext';
+import I18nProvider from './i18n/provider';
 
 function App() {
   const { state } = useContext(AppContext);
@@ -38,8 +39,8 @@ function App() {
   });
 
   return (
-    <ApolloProvider client={client}>
-      <BrowserRouter>
+    <I18nProvider locale={state.locale}>
+      <ApolloProvider client={client}>
         <CssBaseline />
         <NavigationSection />
         <Box
@@ -55,8 +56,8 @@ function App() {
             </Routes>
           </Container>
         </Box>
-      </BrowserRouter>
-    </ApolloProvider>
+      </ApolloProvider>
+    </I18nProvider>
   );
 }
 
