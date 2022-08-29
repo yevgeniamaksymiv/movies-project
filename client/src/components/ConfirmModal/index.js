@@ -6,7 +6,7 @@ import {
   InputBase,
   Divider,
   IconButton,
-  Alert,
+  Alert
 } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -40,6 +40,8 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
     }, CLOSE_ALERT_DELAY);
   };
 
+  const redirectURL = `${window.location.protocol}//${url}`;
+
   return (
     <Modal
       open={open}
@@ -67,7 +69,8 @@ const ConfirmModal = ({ open, url, title, onClose }) => {
             value={url}
           />
           <IconButton
-            href={url}
+            href={redirectURL}
+            rel="noopener"
             target="_blank"
             sx={{ p: '10px' }}
             aria-label="preview"
