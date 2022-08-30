@@ -9,30 +9,39 @@ This app allows you to select a movie, create a list of your favorites and share
 ### Client side:
 
 - [React v18.0](https://reactjs.org/docs/create-a-new-react-app.html)
+
   Library for building user interfaces
 
 - [React Router v6](https://reactrouter.com/en/v6.3.0/getting-started/overview)
+
   Declarative routing for React
 
-- [Material UI](https://mui.com/material-ui/getting-started/overview/) 
+- [Material UI](https://mui.com/material-ui/getting-started/overview/)
+
   Library of React UI components 
 
-- [StoryBook](https://storybook.js.org/docs/react/get-started/introduction) 
+- [StoryBook](https://storybook.js.org/docs/react/get-started/introduction)
+
   UI components explorer
 
 - [React Final Form](https://final-form.org/docs/react-final-form/getting-started)
+
   High performance subscription-based form state management for React
 
-- [React Hooks Testing Library](https://react-hooks-testing-library.com/) 
+- [React Hooks Testing Library](https://react-hooks-testing-library.com/)
+
   React hooks testing utilities 
 
-- [React Share](https://www.npmjs.com/package/react-share)       
+- [React Share](https://www.npmjs.com/package/react-share)
+
   Social media share buttons and share counts for React.
 
-- [React Copy To Clipboard](https://www.npmjs.com/package/react-copy-to-clipboard)  
+- [React Copy To Clipboard](https://www.npmjs.com/package/react-copy-to-clipboard)
+
   Copy to clipboard React component
 
 - [Prettier](https://prettier.io/)
+
   Code formatter 
 
 ### Server side:
