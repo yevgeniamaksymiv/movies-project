@@ -47,12 +47,15 @@ This app allows you to select a movie, create a list of your favorites and share
 ### Server side:
 
 - [GraphQL](https://graphql.org/graphql-js/)
+
   Query language for APIs
 
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+
   Open-source, spec-compliant GraphQL server
 
 - [Axios](https://axios-http.com/docs/intro)
+
   Promise based HTTP client for the browser and node.js
 
 - [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)
