@@ -1,6 +1,6 @@
 # Building server with GraphQL
 
-For implementation server and fetching data for The Movies Project was used the following tech stack:
+For server implementation and fetching data of The Movies Project the following tech stack was used:
 
 - [GraphQL](https://graphql.org/graphql-js/)
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
