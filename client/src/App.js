@@ -18,8 +18,6 @@ import I18nProvider from './i18n/provider';
 function App() {
   const { state } = useContext(AppContext);
   
-  console.log(process.env);
-
   const httpLink = new HttpLink({
     uri: process.env.REACT_APP_API_URI || 'http://localhost:4000/',
   });
