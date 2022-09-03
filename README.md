@@ -4,6 +4,10 @@
 
 This app allows you to select a movie, create a list of your favorites and share it with friends in social networks.
 
+## Demo
+
+[Demo](https://movies-project-live.netlify.app/)
+
 ## Technologies used
 
 ### Client side:
