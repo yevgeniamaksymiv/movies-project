@@ -18,7 +18,7 @@ import I18nProvider from './i18n/provider';
 function App() {
   const { state } = useContext(AppContext);
   const httpLink = new HttpLink({
-    uri: process.env.API_URI || 'http://localhost:4000/',
+    uri: 'https://movies-project-live.herokuapp.com/',
   });
   const localeMiddleware = new ApolloLink((operation, forward) => {
     const customHeaders = operation.getContext().hasOwnProperty('headers')
