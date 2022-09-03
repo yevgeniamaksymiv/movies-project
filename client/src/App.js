@@ -17,7 +17,9 @@ import I18nProvider from './i18n/provider';
 
 function App() {
   const { state } = useContext(AppContext);
-  const httpLink = new HttpLink({ uri: 'http://localhost:4000/' });
+  const httpLink = new HttpLink({
+    uri: process.env.API_URI || 'http://localhost:4000/',
+  });
   const localeMiddleware = new ApolloLink((operation, forward) => {
     const customHeaders = operation.getContext().hasOwnProperty('headers')
       ? operation.getContext().headers
