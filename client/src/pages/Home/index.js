@@ -1,8 +1,15 @@
-import { Grid, Paper, Box, Pagination, Stack } from '@mui/material';
+import { 
+  Grid, 
+  Paper, 
+  Box, 
+  Pagination, 
+  Stack
+} from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 
-import { MovieCard, SelectedMoviesSection } from '../../components';
+import { ErrorWindow, MovieCard, SelectedMoviesSection } from '../../components';
 import { MOVIES_QUERY } from './queries';
 import { useMovies } from '../../hooks/useMovies';
 import { COUNT_OF_PAGES } from '../../const';
@@ -19,18 +26,24 @@ const Home = () => {
     setPage(page);
     window.scrollTo(0, 0);
   };
-
+  
   if (error) {
-    return 'Error';
+    return (
+      <ErrorWindow />
+    );
   }
-
+  
   return (
     <Box sx={{ flexGrow: 1, marginTop: 2, paddingBottom: 2 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={8}>
           <Paper>
             <Box sx={{ flexGrow: 1, padding: 1 }}>
-              {loading && 'Loading...'}
+              {loading && (
+                <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 3}}>
+                  <CircularProgress/>
+                </Box>
+              )}
               {data && (
                 <Grid container spacing={2}>
                   {data.movies.results.map((movie) => (

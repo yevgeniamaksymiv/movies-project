@@ -6,6 +6,7 @@ import SelectedMoviesSection from './SelectedMoviesSection';
 import SelectedMoviesForm from './SelectedMoviesForm';
 import ConfirmModal from './ConfirmModal';
 import SocialShare from './SocialShare';
+import ErrorWindow from './ErrorWindow';
 
 export {
   NavigationSection,
@@ -16,4 +17,5 @@ export {
   SelectedMoviesForm,
   ConfirmModal,
   SocialShare,
+  ErrorWindow
 };
