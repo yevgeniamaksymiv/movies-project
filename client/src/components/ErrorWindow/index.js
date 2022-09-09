@@ -17,7 +17,7 @@ const ErrorWindow = () => {
     <Box sx={style}>
       <Alert severity="error">
         <AlertTitle>Error</AlertTitle>
-        503 Service Unavailable
+        500 Internal Server Error
       </Alert>
     </Box>
   );
