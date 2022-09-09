@@ -9,7 +9,9 @@ For server implementation and fetching data of The Movies Project the following 
 
 ## Prerequisites
 
-Install [Node.js](https://nodejs.org/).
+- Install [Node.js](https://nodejs.org/).
+- Register your own API key [The Movie Database (TMDB) API](https://developers.themoviedb.org/3/getting-started/introduction)
+- Add `.env` file with `REACT_APP_API_KEY` variable to root of `server` 
 
 ## First steps:
 
