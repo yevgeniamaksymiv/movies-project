@@ -54,7 +54,7 @@ const NavigationSection = () => {
       </List>
       <Divider />
       <List>
-        <Link to="settings" style={{ textDecoration: 'none', color: 'grey' }}>
+        {/* <Link to="settings" style={{ textDecoration: 'none', color: 'grey' }}> */}
           <ListItem>
             <ListItemButton>
               <ListItemIcon>
@@ -65,7 +65,7 @@ const NavigationSection = () => {
               </FormattedMessage>
             </ListItemButton>
           </ListItem>
-        </Link>
+        {/* </Link> */}
       </List>
       <Divider />
       <List>
@@ -142,7 +142,7 @@ const NavigationSection = () => {
               Українська
             </Button>
           </Box>
-          <Box sx={{ flexGrow: 0, display: { xs: 'none', lg: 'flex' } }}>
+          {/* <Box sx={{ flexGrow: 0, display: { xs: 'none', lg: 'flex' } }}>
             <Button sx={{ my: 2, color: 'white', display: 'block' }}>
               <Link
                 to="settings"
@@ -151,7 +151,7 @@ const NavigationSection = () => {
                 <FormattedMessage id="settings" />
               </Link>
             </Button>
-          </Box>
+          </Box> */}
         </Toolbar>
       </AppBar>
       <Drawer
